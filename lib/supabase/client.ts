@@ -1,10 +1,10 @@
 "use client";
 
-import { createBrowserClientFactory } from "../../../shared/supabase/src/clients/browser";
+import { createBrowserClient } from "@supabase/ssr";
 
 export function createClient() {
-  return createBrowserClientFactory({
-    url: process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  });
+  return createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 }
