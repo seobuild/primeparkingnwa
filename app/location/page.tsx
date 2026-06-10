@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { locationPage } from "@/lib/content/pages/location";
+import HeroSection from "@/lib/components/sections/HeroSection";
 import { PageRenderer } from "@/lib/components/sections";
 
 export const metadata: Metadata = {
@@ -22,9 +23,18 @@ export const metadata: Metadata = {
 };
 
 export default function LocationPage() {
+  const heroSection = locationPage.sections[0];
+  const restSections = locationPage.sections.slice(1);
+
   return (
-    <div className="max-w-7xl mx-auto">
-      <PageRenderer sections={locationPage.sections} />
+    <div>
+      {/* Hero: full width */}
+      {heroSection.type === "hero" && <HeroSection section={heroSection} />}
+
+      {/* Rest: normal page width */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <PageRenderer sections={restSections} />
+      </div>
     </div>
   );
 }
