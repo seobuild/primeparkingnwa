@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url;
   const staticSlugs = getAllSlugs();
 
-  // Fetch blog post slugs from Supabase
+  // Fetch blog post slugs from Supabase (returns [] if unavailable)
   const blogSlugs = await fetchBlogSlugs("primeparkingnwa");
   const blogUrls: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
@@ -37,5 +37,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: getSitemapPriority(slug),
   }));
 
-  return [...staticUrls, ...blogUrls];
+  // Hardcoded pages not in the content registry
+  const hardcodedUrls: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms-of-service`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+  ];
+
+  return [...staticUrls, ...hardcodedUrls, ...blogUrls];
 }
