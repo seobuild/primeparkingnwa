@@ -153,8 +153,6 @@ function parseInline(text: string): React.ReactNode {
   return <>{parts}</>;
 }
 
-export const dynamic = "force-dynamic";
-
 interface Props {
   params: Promise<{ slug: string }>;
 }

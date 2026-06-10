@@ -62,7 +62,7 @@ export default function HeroSection({ section }: Props) {
       </div>
 
       {/* Content */}
-      <div className={`relative z-10 w-full py-16 md:py-20 ${hasMap ? "px-6 sm:px-10 lg:px-16" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"} ${isLeft && !hasMap ? "lg:pl-20" : !isLeft ? "text-center" : ""}`}>
+      <div className={`relative z-10 w-full pt-24 pb-16 md:py-20 ${hasMap ? "px-6 sm:px-10 lg:px-16" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"} ${isLeft && !hasMap ? "lg:pl-20" : !isLeft ? "text-center" : ""}`}>
         {hasRightContent ? (
           /* Two-column layout: location page with map/logo */
           <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${!hasMap ? "max-w-6xl" : ""}`}>

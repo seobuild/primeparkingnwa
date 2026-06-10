@@ -4,8 +4,6 @@ import Image from "next/image";
 import { fetchBlogPosts } from "@/lib/supabase/blog";
 import { siteConfig } from "@/lib/content/site-config";
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
   title: `Blog | ${siteConfig.name}`,
   description: `Read the latest updates, tips, and insights from ${siteConfig.name}.`,
