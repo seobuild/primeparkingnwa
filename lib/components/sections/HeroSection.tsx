@@ -154,7 +154,7 @@ function HeroText({ section, isLeft }: { section: HeroSectionType; isLeft: boole
 
       {/* Buttons */}
       {section.buttons && section.buttons.length > 0 && (
-        <div className={`flex flex-wrap items-center gap-3 ${isLeft ? "" : "justify-center"}`}>
+        <div className={`flex flex-wrap items-center gap-3 mb-6 md:mb-8 ${isLeft ? "" : "justify-center"}`}>
           {section.buttons.map((btn, idx) => {
             const isPrimary = btn.variant === "primary" || (!btn.variant && idx === 0);
             return (
