@@ -108,7 +108,7 @@ export const semiTruckParkingService: ServiceContent = {
 - Long-term parking for dedicated routes
 - Month-to-month terms — no long contracts
 
-[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a semi truck parking space online](https://rent.primeparkingnwa.com/sites) today.`,
+[Call us](tel:4796407396) or [rent a semi truck parking space online](https://rent.primeparkingnwa.com/sites) today.`,
       align: "left",
       maxWidth: "lg",
     },

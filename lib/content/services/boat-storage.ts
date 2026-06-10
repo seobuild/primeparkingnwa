@@ -105,7 +105,7 @@ export const boatStorageService: ServiceContent = {
 
 Whether you fish every weekend or take the pontoon out a few times each summer, having a dedicated storage space means your boat is always clean, fueled, and ready to go.
 
-[Contact us](mailto:primeparkingnwa@gmail.com) or [reserve your boat storage space online](https://rent.primeparkingnwa.com/sites) today.`,
+[Call us](tel:4796407396) or [reserve your boat storage space online](https://rent.primeparkingnwa.com/sites) today.`,
       align: "left",
       maxWidth: "lg",
     },

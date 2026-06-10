@@ -108,7 +108,7 @@ export const constructionEquipmentStorageService: ServiceContent = {
 - Pick up gear on your way to the next project
 - Month-to-month terms with no long-term commitment
 
-[Contact us](mailto:primeparkingnwa@gmail.com) or [rent equipment storage online](https://rent.primeparkingnwa.com/sites) today.`,
+[Call us](tel:4796407396) or [rent equipment storage online](https://rent.primeparkingnwa.com/sites) today.`,
       align: "left",
       maxWidth: "lg",
     },

@@ -46,9 +46,9 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">Contact Us</h2>
           <p>
-            If you have questions about this privacy policy, please contact us at{" "}
-            <a href="mailto:primeparkingnwa@gmail.com" className="text-[#1a365d] hover:underline">
-              primeparkingnwa@gmail.com
+            If you have questions about this privacy policy, please call us at{" "}
+            <a href="tel:4796407396" className="text-[#1a365d] hover:underline">
+              (479) 640-7396
             </a>
             .
           </p>

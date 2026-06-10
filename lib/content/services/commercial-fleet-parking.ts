@@ -109,7 +109,7 @@ export const commercialFleetParkingService: ServiceContent = {
 - Online payments and account management
 - Friendly support when you need it
 
-[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a commercial parking space online](https://rent.primeparkingnwa.com/sites) today.`,
+[Call us](tel:4796407396) or [rent a commercial parking space online](https://rent.primeparkingnwa.com/sites) today.`,
       align: "left",
       maxWidth: "lg",
     },

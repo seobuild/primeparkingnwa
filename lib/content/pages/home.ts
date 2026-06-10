@@ -48,7 +48,7 @@ export const homePage: PageContent = {
 
 **Do you need an extra parking space?**
 
-[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a space online](https://rent.primeparkingnwa.com/sites) today!`,
+[Call us](tel:4796407396) or [rent a space online](https://rent.primeparkingnwa.com/sites) today!`,
       align: "center",
       maxWidth: "lg",
       theme: "dark",

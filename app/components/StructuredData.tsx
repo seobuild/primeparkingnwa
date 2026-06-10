@@ -11,7 +11,6 @@ export default function StructuredData() {
     description: siteConfig.description,
     url: siteConfig.url,
     telephone: `+1-${siteConfig.phone}`,
-    email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.street,

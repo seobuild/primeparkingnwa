@@ -100,7 +100,7 @@ Prime Parking NWA offers a simple, off-site alternative that keeps you compliant
 - Lowell, AR
 - Centerton, AR
 
-[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a space online](https://rent.primeparkingnwa.com/sites) today.`,
+[Call us](tel:4796407396) or [rent a space online](https://rent.primeparkingnwa.com/sites) today.`,
       align: "left",
       maxWidth: "lg",
     },

@@ -107,7 +107,7 @@ export const trailerStorageService: ServiceContent = {
 - Avoid the hassle of squeezing into residential driveways
 - Keep your trailer clean and road-ready all season
 
-[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a trailer storage space online](https://rent.primeparkingnwa.com/sites) today.`,
+[Call us](tel:4796407396) or [rent a trailer storage space online](https://rent.primeparkingnwa.com/sites) today.`,
       align: "left",
       maxWidth: "lg",
     },
