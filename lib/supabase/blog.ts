@@ -1,12 +1,13 @@
 import { createAdminClient } from "./admin";
 
-// Map project slug to Supabase site_id UUID
+// Map project slug to Supabase site_id UUID.
+// Falls back to SITE_ID env var if set, otherwise uses hardcoded map.
 const SITE_ID_MAP: Record<string, string> = {
   primeparkingnwa: "90d03e37-bc6a-4c5d-9de0-3320b3eb4872",
 };
 
 function getSiteId(projectSlug: string): string | undefined {
-  return SITE_ID_MAP[projectSlug];
+  return process.env.SITE_ID || SITE_ID_MAP[projectSlug];
 }
 
 export interface BlogPost {
@@ -84,8 +85,10 @@ function mapRow(row: BlogPostRow): BlogPost {
  */
 export async function fetchBlogPosts(projectSlug: string): Promise<BlogPost[]> {
   const siteId = getSiteId(projectSlug);
+  console.log("[Blog] Fetching posts for project:", projectSlug, "site_id:", siteId);
+
   if (!siteId) {
-    console.error("Unknown project slug:", projectSlug);
+    console.error("[Blog] Unknown project slug:", projectSlug);
     return [];
   }
 
@@ -100,14 +103,15 @@ export async function fetchBlogPosts(projectSlug: string): Promise<BlogPost[]> {
       .limit(50);
 
     if (error) {
-      console.error("Supabase blog_posts fetch error:", error.message);
+      console.error("[Blog] Supabase fetch error:", error.message);
       return [];
     }
 
     const rows = (data || []) as unknown as BlogPostRow[];
+    console.log("[Blog] Found", rows.length, "posts for site_id:", siteId);
     return rows.map(mapRow);
   } catch (err) {
-    console.error("Failed to fetch blog posts from Supabase:", err);
+    console.error("[Blog] Failed to fetch from Supabase:", err);
     return [];
   }
 }
