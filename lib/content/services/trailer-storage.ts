@@ -85,12 +85,31 @@ export const trailerStorageService: ServiceContent = {
       },
     },
     {
-      type: "split-content",
-      preTitle: "HOA-Friendly",
-      title: "Keep Your Driveway Clear & Your HOA Happy",
-      body: `Many neighborhoods across Rogers, Bentonville, Springdale, and Fayetteville restrict trailer parking on residential streets and driveways. Fines, warnings, and neighbor complaints can quickly become a headache.
+      type: "content",
+      preTitle: "Protect Your Investment",
+      title: "Trailer Storage Built for Work & Play",
+      body: `Your trailer hauls everything from work equipment to weekend toys — and leaving it parked on grass or gravel only leads to rusted jacks, flat spots, and uneven wear. Prime Parking NWA offers a better way to store the trailer that keeps your life moving.
 
-Prime Parking NWA offers a simple, off-site alternative that keeps you compliant without sacrificing access to your trailer. Our facility is just minutes from major highways, making pickup and drop-off convenient no matter where you live in NWA.`,
+**Why our lot works for trailers:**
+- Fully paved surface protects tires, bearings, and jacks
+- Wide spaces for easy hook-up and unhooking
+- Room for utility trailers, enclosed cargo trailers, and equipment haulers
+- Easy in-and-out maneuvering for trucks with hitches
+
+**For contractors & DIYers:**
+- Access your tools and equipment on your schedule
+- Keep your home driveway clear
+- Reduce wear from repeated on-street parking
+- Secure your trailer when it is not on the job
+
+**For recreation:**
+- Store your RV, ATV, or boat trailer between adventures
+- Avoid the hassle of squeezing into residential driveways
+- Keep your trailer clean and road-ready all season
+
+[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a trailer storage space online](https://rent.primeparkingnwa.com/sites) today.`,
+      align: "left",
+      maxWidth: "lg",
     },
   ],
 };

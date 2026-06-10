@@ -86,12 +86,28 @@ export const boatStorageService: ServiceContent = {
       },
     },
     {
-      type: "split-content",
-      preTitle: "HOA Friendly",
-      title: "Keep Your Driveway Clear & Your HOA Happy",
-      body: `Many neighborhoods across Rogers, Bentonville, Springdale, and Fayetteville restrict boats and trailers from being parked in driveways or on the street. Fines, warnings, and neighbor complaints can quickly become a headache.
+      type: "content",
+      preTitle: "Why Store Here",
+      title: "Ready for the Water, Whenever You Are",
+      body: `Your boat is an investment — and it deserves better than sitting in a driveway or on grass between trips to Beaver Lake. Prime Parking NWA gives you a secure, paved home base that keeps your watercraft protected and ready to launch.
 
-Prime Parking NWA offers a simple, off-site alternative that keeps you compliant without sacrificing access to your boat. Our facility is just minutes from major highways and Beaver Lake, making pickup and drop-off convenient no matter where you live in NWA.`,
+**The advantage of our location:**
+- Just minutes from Beaver Lake boat ramps
+- Fully paved lot — no mud, ruts, or soft ground
+- Room for fishing boats, pontoons, and personal watercraft
+- Easy trailer maneuvering with wide lanes and open space
+
+**Year-round peace of mind:**
+- Off-season storage between boating trips
+- Gated access so your equipment stays secure
+- Protection from weather, sun damage, and street wear
+- Online payments and account management
+
+Whether you fish every weekend or take the pontoon out a few times each summer, having a dedicated storage space means your boat is always clean, fueled, and ready to go.
+
+[Contact us](mailto:primeparkingnwa@gmail.com) or [reserve your boat storage space online](https://rent.primeparkingnwa.com/sites) today.`,
+      align: "left",
+      maxWidth: "lg",
     },
   ],
 };

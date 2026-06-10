@@ -85,12 +85,32 @@ export const constructionEquipmentStorageService: ServiceContent = {
       },
     },
     {
-      type: "split-content",
-      preTitle: "HOA Friendly",
-      title: "Keep Your Driveway Clear & Your HOA Happy",
-      body: `Many neighborhoods across Rogers, Bentonville, Springdale, and Fayetteville restrict construction equipment and large trailers from being stored in driveways or on residential streets. Fines, warnings, and neighbor complaints can quickly derail your project timeline.
+      type: "content",
+      preTitle: "Job Site Ready",
+      title: "Equipment Storage That Keeps You Moving",
+      body: `Heavy machinery is expensive — and leaving it on a job site overnight or in a residential driveway is a risk you do not need to take. Prime Parking NWA offers contractors and builders a secure, paved yard designed for the equipment that builds Northwest Arkansas.
 
-Prime Parking NWA offers a secure, off-site alternative that keeps your equipment protected and your property compliant. Our facility is just minutes from major highways and job sites across NWA, making pickup and drop-off convenient no matter where your next project is.`,
+**Built for heavy equipment:**
+- Fully paved lot — no mud, no soft ground, no ruts
+- Wide lanes for excavators, loaders, and skid steers
+- Room for equipment trailers, scissor lifts, and generators
+- Easy in-and-out access for trucks with trailers
+
+**Protect your investment:**
+- Gated facility with controlled access
+- 24/7 monitoring and security
+- Reduce theft risk compared to overnight job site storage
+- Extend equipment life by avoiding weather exposure
+
+**For contractors in NWA:**
+- Store equipment between jobs or during off-season
+- Central location near Rogers, Bentonville, and Springdale
+- Pick up gear on your way to the next project
+- Month-to-month terms with no long-term commitment
+
+[Contact us](mailto:primeparkingnwa@gmail.com) or [rent equipment storage online](https://rent.primeparkingnwa.com/sites) today.`,
+      align: "left",
+      maxWidth: "lg",
     },
   ],
 };

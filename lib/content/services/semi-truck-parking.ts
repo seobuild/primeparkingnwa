@@ -85,12 +85,32 @@ export const semiTruckParkingService: ServiceContent = {
       },
     },
     {
-      type: "split-content",
-      preTitle: "HOA Friendly",
-      title: "Keep Your Driveway Clear & Your HOA Happy",
-      body: `Many neighborhoods across Rogers, Bentonville, Springdale, and Fayetteville restrict semi trucks and large commercial vehicles from being parked in driveways or on the street. Fines, warnings, and neighbor complaints can quickly become a headache.
+      type: "content",
+      preTitle: "Built for Truckers",
+      title: "A Secure Home Base for Your Rig",
+      body: `Your semi truck is your livelihood — and it deserves a safe place to rest between hauls. Prime Parking NWA offers owner-operators and fleet managers a secure, paved lot designed for the trucks that keep Northwest Arkansas moving.
 
-Prime Parking NWA offers a professional, off-site alternative designed specifically for commercial trucks and owner-operators. Our facility is just minutes from major highways, making pickup and drop-off convenient no matter where you live in NWA.`,
+**Why truckers trust us:**
+- Fully paved surface protects tires and suspension
+- Wide spaces for semis, day cabs, and sleeper cabs
+- Easy access to I-49 for quick dispatch
+- Room for tractor-trailers, flatbeds, and box trucks
+
+**Rest easy between hauls:**
+- Gated facility with controlled access
+- 24/7 monitoring and security
+- Park your rig knowing it is protected
+- Cargo and cab stay secure while you are off the road
+
+**For owner-operators & fleets:**
+- Overnight parking between long hauls
+- Weekend storage when you are home
+- Long-term parking for dedicated routes
+- Month-to-month terms — no long contracts
+
+[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a semi truck parking space online](https://rent.primeparkingnwa.com/sites) today.`,
+      align: "left",
+      maxWidth: "lg",
     },
   ],
 };

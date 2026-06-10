@@ -85,12 +85,33 @@ export const commercialFleetParkingService: ServiceContent = {
       },
     },
     {
-      type: "split-content",
-      preTitle: "HOA Friendly",
-      title: "Keep Your Driveway Clear & Your HOA Happy",
-      body: `Many neighborhoods and business districts across Rogers, Bentonville, Springdale, and Fayetteville restrict commercial vehicles from overnight parking. Limited lot space, zoning rules, and HOA restrictions can make fleet parking a challenge.
+      type: "content",
+      preTitle: "Built for Business",
+      title: "Fleet Parking That Protects Your Assets",
+      body: `Your vehicles are the backbone of your business — and where you park them matters. Prime Parking NWA gives commercial operators a secure, professional home base for vans, trucks, and mobile equipment that reduces liability and keeps your fleet ready to roll.
 
-Prime Parking NWA offers a professional, off-site solution designed specifically for commercial vehicles. Our fully paved lot, gated access, and 24/7 availability give your fleet a secure home base without the headaches.`,
+**Why businesses choose us:**
+- Reduce insurance risk with off-street, monitored parking
+- Professional address for clients and deliveries
+- 24/7 access so early crews and late shifts are covered
+- Paved lot eliminates the mud and ruts that damage vehicles
+
+**Who we serve:**
+- Service vans (plumbing, electrical, HVAC, mobile repair)
+- Contractor trucks and box trucks with ladder racks
+- Food trucks and mobile kitchens
+- Event and promotional vehicles
+- Delivery fleets and transport rigs
+
+**Month-to-month flexibility:**
+- No long-term contracts
+- Scale up or down as your fleet changes
+- Online payments and account management
+- Friendly support when you need it
+
+[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a commercial parking space online](https://rent.primeparkingnwa.com/sites) today.`,
+      align: "left",
+      maxWidth: "lg",
     },
   ],
 };

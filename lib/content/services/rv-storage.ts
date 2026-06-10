@@ -85,12 +85,24 @@ export const rvStorageService: ServiceContent = {
       },
     },
     {
-      type: "split-content",
-      preTitle: "HOA-Friendly",
+      type: "content",
+      preTitle: "HOA Friendly",
       title: "Keep Your Driveway Clear & Your HOA Happy",
       body: `Many neighborhoods across Rogers, Bentonville, Springdale, and Fayetteville restrict RV parking on residential streets and driveways. Fines, warnings, and neighbor complaints can quickly turn your RV dream into a headache.
 
-Prime Parking NWA offers a simple, off-site alternative that keeps you compliant without sacrificing access to your vehicle. Our facility is just minutes from major highways, making pickup and drop-off convenient no matter where you live in NWA.`,
+Prime Parking NWA offers a simple, off-site alternative that keeps you compliant without sacrificing access to your vehicle. Our facility is just minutes from major highways, making pickup and drop-off convenient no matter where you live in NWA.
+
+**Popular for homeowners in:**
+- Rogers, AR
+- Bentonville, AR
+- Springdale, AR
+- Fayetteville, AR
+- Lowell, AR
+- Centerton, AR
+
+[Contact us](mailto:primeparkingnwa@gmail.com) or [rent a space online](https://rent.primeparkingnwa.com/sites) today.`,
+      align: "left",
+      maxWidth: "lg",
     },
   ],
 };
