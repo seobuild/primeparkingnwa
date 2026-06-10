@@ -4,7 +4,9 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StructuredData from "./components/StructuredData";
+import Analytics from "./components/Analytics";
 import { siteConfig } from "@/lib/content/site-config";
+import { fetchSiteSettings } from "@/lib/supabase/site-settings";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -26,83 +28,92 @@ export const viewport = {
   themeColor: "#1a365d",
 };
 
-export const metadata: Metadata = {
-  title: {
-    default: `${siteConfig.name} | ${siteConfig.tagline}`,
-    template: `%s | ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  keywords: [
-    "parking NWA",
-    "vehicle storage Rogers AR",
-    "RV storage Northwest Arkansas",
-    "boat storage Rogers",
-    "commercial fleet parking",
-    "trailer storage Arkansas",
-    "paved parking lot",
-    "24/7 gated storage",
-    "Prime Parking NWA",
-    "The Drop Yard NWA",
-  ],
-  metadataBase: new URL(siteConfig.url),
-  applicationName: siteConfig.name,
-  appleWebApp: {
-    capable: true,
-    title: siteConfig.name,
-    statusBarStyle: "default",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: siteConfig.name,
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await fetchSiteSettings("primeparkingnwa");
+
+  return {
+    title: {
+      default: `${siteConfig.name} | ${siteConfig.tagline}`,
+      template: `%s | ${siteConfig.name}`,
+    },
     description: siteConfig.description,
-    url: siteConfig.url,
-    images: [
-      {
-        url: "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/0c9d9b89-6b89-44cd-9832-e00e922fff63/test+web.jpg",
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} - Secure paved vehicle storage facility`,
-      },
+    keywords: [
+      "parking NWA",
+      "vehicle storage Rogers AR",
+      "RV storage Northwest Arkansas",
+      "boat storage Rogers",
+      "commercial fleet parking",
+      "trailer storage Arkansas",
+      "paved parking lot",
+      "24/7 gated storage",
+      "Prime Parking NWA",
+      "The Drop Yard NWA",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@primeparkingnwa",
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
-    description: siteConfig.description,
-    images: [
-      "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/0c9d9b89-6b89-44cd-9832-e00e922fff63/test+web.jpg",
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    metadataBase: new URL(siteConfig.url),
+    applicationName: siteConfig.name,
+    appleWebApp: {
+      capable: true,
+      title: siteConfig.name,
+      statusBarStyle: "default",
+    },
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      siteName: siteConfig.name,
+      title: `${siteConfig.name} | ${siteConfig.tagline}`,
+      description: siteConfig.description,
+      url: siteConfig.url,
+      images: [
+        {
+          url: "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/0c9d9b89-6b89-44cd-9832-e00e922fff63/test+web.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.name} - Secure paved vehicle storage facility`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@primeparkingnwa",
+      title: `${siteConfig.name} | ${siteConfig.tagline}`,
+      description: siteConfig.description,
+      images: [
+        "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/0c9d9b89-6b89-44cd-9832-e00e922fff63/test+web.jpg",
+      ],
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  icons: {
-    icon: [
-      {
-        url: siteConfig.favicon,
-        sizes: "100x100",
-        type: "image/x-icon",
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
-    ],
-  },
-};
+    },
+    icons: {
+      icon: [
+        {
+          url: siteConfig.favicon,
+          sizes: "100x100",
+          type: "image/x-icon",
+        },
+      ],
+    },
+    verification: settings.googleSearchConsoleVerification
+      ? { google: settings.googleSearchConsoleVerification }
+      : undefined,
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const settings = await fetchSiteSettings("primeparkingnwa");
+
   return (
     <html
       lang="en"
@@ -110,6 +121,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         <StructuredData />
+        <Analytics
+          googleAnalyticsId={settings.googleAnalyticsId}
+          googleTagManagerId={settings.googleTagManagerId}
+          facebookPixelId={settings.facebookPixelId}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
