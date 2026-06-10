@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,6 +11,17 @@ export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [expandedDropdown, setExpandedDropdown] = useState<number | null>(null);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
 
   const textColor = isHome ? "text-white" : "text-gray-900";
   const hoverColor = isHome ? "hover:text-white/80" : "hover:text-[#1a365d]";
@@ -18,12 +29,6 @@ export default function Header() {
     ? "bg-white text-gray-900 border-white hover:bg-gray-100"
     : "bg-white text-gray-900 border-gray-900 hover:bg-gray-100";
   const bgClass = isHome ? "absolute top-0 left-0 right-0 z-50" : "sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100";
-  const mobileBg = isHome ? "bg-black/95" : "bg-white";
-  const mobileText = isHome ? "text-white" : "text-gray-900";
-  const mobileSubText = isHome ? "text-white/60" : "text-gray-500";
-  const mobileCtaBorder = isHome
-    ? "border-white text-white hover:bg-white hover:text-gray-900"
-    : "border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white";
   const navTextSize = isHome ? "text-base" : "text-sm";
 
   return (
@@ -104,15 +109,15 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile: logo center, hamburger left, CTA right */}
-          <div className="flex md:hidden items-center justify-between py-4">
+          {/* Mobile: hamburger left, logo center, CTA right */}
+          <div className="flex md:hidden items-center justify-between py-3">
             <button
-              className={`p-2 ${textColor}`}
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
+              className={`p-2 -ml-2 ${textColor}`}
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16" />
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18" />
               </svg>
             </button>
 
@@ -122,7 +127,7 @@ export default function Header() {
                 alt={siteConfig.logo.alt}
                 width={siteConfig.logo.width || 200}
                 height={siteConfig.logo.height || 60}
-                className="h-12 w-auto"
+                className="h-10 w-auto"
                 priority
               />
             </Link>
@@ -138,79 +143,127 @@ export default function Header() {
             </a>
           </div>
         </div>
+      </header>
 
-        {/* Mobile Nav Overlay */}
-        {mobileOpen && (
-          <div className={`md:hidden fixed inset-0 z-50 ${mobileBg} backdrop-blur-sm`}>
-            <div className="flex flex-col h-full">
-              <div className="flex items-center justify-between px-4 py-4">
-                <Link href="/" onClick={() => setMobileOpen(false)}>
-                  <Image
-                    src={siteConfig.logo.src}
-                    alt={siteConfig.logo.alt}
-                    width={siteConfig.logo.width || 200}
-                    height={siteConfig.logo.height || 60}
-                    className="h-12 w-auto"
-                    priority
-                  />
-                </Link>
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  className={`p-2 ${mobileText}`}
-                  aria-label="Close menu"
-                >
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
+      {/* Mobile Nav Drawer */}
+      <div
+        className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={!mobileOpen}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+          onClick={() => setMobileOpen(false)}
+        />
 
-              <nav className="flex-1 flex flex-col items-center justify-center space-y-6 px-4">
-                {siteConfig.nav.map((item, idx) =>
-                  item.children ? (
-                    <div key={idx} className="text-center">
-                      <span className={`text-lg font-medium ${mobileSubText} block mb-3`}>
-                        {item.label}
-                      </span>
-                      <div className="space-y-2">
+        {/* Drawer panel */}
+        <div
+          className={`absolute top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-white shadow-2xl flex flex-col transform transition-transform duration-300 ease-out ${
+            mobileOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {/* Drawer header */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+            <span className="text-sm font-bold uppercase tracking-wider text-gray-500">
+              Menu
+            </span>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="p-2 -mr-2 text-gray-900"
+              aria-label="Close menu"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Nav links */}
+          <nav className="flex-1 overflow-y-auto px-5 py-6">
+            <ul className="space-y-1">
+              {siteConfig.nav.map((item, idx) =>
+                item.children ? (
+                  <li key={idx}>
+                    <button
+                      className="w-full flex items-center justify-between py-3 text-lg font-medium text-gray-900"
+                      onClick={() => setExpandedDropdown(expandedDropdown === idx ? null : idx)}
+                      aria-expanded={expandedDropdown === idx}
+                    >
+                      <span>{item.label}</span>
+                      <svg
+                        className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${
+                          expandedDropdown === idx ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-200 ${
+                        expandedDropdown === idx ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <ul className="pl-4 pb-2 space-y-1 border-l-2 border-gray-100 ml-1">
                         {item.children.map((child, cidx) => (
-                          <Link
-                            key={cidx}
-                            href={child.href}
-                            className={`block text-base ${mobileText} hover:opacity-80`}
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
+                          <li key={cidx}>
+                            <Link
+                              href={child.href}
+                              className="block py-2.5 text-[15px] text-gray-600 hover:text-[#1a365d] transition-colors"
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
-                  ) : (
+                  </li>
+                ) : (
+                  <li key={idx}>
                     <Link
-                      key={idx}
                       href={item.href}
-                      className={`text-xl font-medium ${mobileText} hover:opacity-80`}
+                      className="block py-3 text-lg font-medium text-gray-900 hover:text-[#1a365d] transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.label}
                     </Link>
-                  )
-                )}
-                <a
-                  href={siteConfig.externalLinks.tenantPortal}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-6 inline-flex items-center gap-1 px-6 py-3 border text-base font-medium rounded-full transition-colors bg-white text-gray-900 border-white hover:bg-gray-100`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  TENANT PORTAL
-                  <ExternalLinkIcon className="w-4 h-4" />
-                </a>
-              </nav>
-            </div>
+                  </li>
+                )
+              )}
+            </ul>
+          </nav>
+
+          {/* Bottom actions */}
+          <div className="px-5 py-5 border-t border-gray-100 space-y-3 bg-gray-50/50">
+            <a
+              href={siteConfig.externalLinks.tenantPortal}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-3 bg-[#1a365d] text-white font-medium rounded-full hover:bg-[#1a365d]/90 transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              TENANT PORTAL
+              <ExternalLinkIcon className="w-4 h-4" />
+            </a>
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="flex items-center justify-center gap-2 w-full py-3 border-2 border-[#1a365d] text-[#1a365d] font-medium rounded-full hover:bg-[#1a365d] hover:text-white transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              ({siteConfig.phone.slice(0, 3)}) {siteConfig.phone.slice(3, 6)}-{siteConfig.phone.slice(6)}
+            </a>
           </div>
-        )}
-      </header>
+        </div>
+      </div>
     </>
   );
 }
