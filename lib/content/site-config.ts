@@ -88,7 +88,6 @@ export const siteConfig: SiteConfig = {
       title: "Company",
       links: [
         { label: "Home", href: "/" },
-        { label: "About Us", href: "/" },
         { label: "Location & Hours", href: "/location" },
         { label: "Contact Us", href: "mailto:primeparkingnwa@gmail.com" },
         { label: "Privacy Policy", href: "/privacy-policy" },
