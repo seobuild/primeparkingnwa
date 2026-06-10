@@ -31,10 +31,8 @@ export default function LocationPage() {
       {/* Hero: full width */}
       {heroSection.type === "hero" && <HeroSection section={heroSection} />}
 
-      {/* Rest: normal page width */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <PageRenderer sections={restSections} />
-      </div>
+      {/* Rest: sections handle their own containers */}
+      <PageRenderer sections={restSections} />
     </div>
   );
 }
