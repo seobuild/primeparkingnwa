@@ -89,8 +89,6 @@ export const siteConfig: SiteConfig = {
       links: [
         { label: "Home", href: "/" },
         { label: "Location & Hours", href: "/location" },
-        { label: "Privacy Policy", href: "/privacy-policy" },
-        { label: "Terms of Service", href: "/terms-of-service" },
       ],
     },
   ],
