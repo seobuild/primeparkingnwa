@@ -25,8 +25,8 @@ export default function StructuredData() {
       longitude: -94.1578,
     },
     image: [
-      "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/0c9d9b89-6b89-44cd-9832-e00e922fff63/test+web.jpg",
-      "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/c93f3be6-1367-4032-90d4-8d8d789cc764/IMG_0666.jpg",
+      "https://lcpndbwqgdvduwneeplr.supabase.co/storage/v1/object/public/prime-parking-media/aerial2.webp",
+      "https://lcpndbwqgdvduwneeplr.supabase.co/storage/v1/object/public/prime-parking-media/general-storage.avif",
     ],
     openingHoursSpecification: [
       {
@@ -60,19 +60,22 @@ export default function StructuredData() {
       },
     ],
     priceRange: "$$",
-    areaServed: {
-      "@type": "Place",
-      name: "Northwest Arkansas",
-      containsPlace: [
-        { "@type": "City", name: "Rogers" },
-        { "@type": "City", name: "Bentonville" },
-        { "@type": "City", name: "Lowell" },
-        { "@type": "City", name: "Springdale" },
-        { "@type": "City", name: "Fayetteville" },
-        { "@type": "City", name: "Centerton" },
-        { "@type": "City", name: "Gravette" },
-      ],
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteConfig.url}${siteConfig.logo.src}`,
+      width: siteConfig.logo.width,
+      height: siteConfig.logo.height,
     },
+    hasMap: "https://www.google.com/maps/dir//2808+N+26th+St,+Rogers,+AR+72756",
+    areaServed: [
+      { "@type": "City", name: "Rogers, AR" },
+      { "@type": "City", name: "Bentonville, AR" },
+      { "@type": "City", name: "Lowell, AR" },
+      { "@type": "City", name: "Springdale, AR" },
+      { "@type": "City", name: "Fayetteville, AR" },
+      { "@type": "City", name: "Centerton, AR" },
+      { "@type": "City", name: "Gravette, AR" },
+    ],
     sameAs: [
       siteConfig.social.facebook,
       siteConfig.social.instagram,

@@ -4,22 +4,33 @@ import Image from "next/image";
 import { fetchBlogPosts } from "@/lib/supabase/blog";
 import { siteConfig } from "@/lib/content/site-config";
 
+const OG_BASE = "https://lcpndbwqgdvduwneeplr.supabase.co/storage/v1/object/public/prime-parking-media";
+
 export const metadata: Metadata = {
-  title: `Blog | ${siteConfig.name}`,
+  title: "Blog",
   description: `Read the latest updates, tips, and insights from ${siteConfig.name}.`,
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: `Blog | ${siteConfig.name}`,
+    title: "Blog",
     description: `Read the latest updates, tips, and insights from ${siteConfig.name}.`,
     url: "/blog",
     type: "website",
+    images: [
+      {
+        url: `${OG_BASE}/aerial2.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Blog | ${siteConfig.name} - Updates, tips, and insights`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `Blog | ${siteConfig.name}`,
+    title: "Blog",
     description: `Read the latest updates, tips, and insights from ${siteConfig.name}.`,
+    images: [`${OG_BASE}/aerial2.webp`],
   },
 };
 

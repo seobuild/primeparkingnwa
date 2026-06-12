@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
   tagline: "Secure Paved Vehicle Storage in Rogers, AR",
   description:
     "Prime Parking NWA offers secure, fully paved outdoor parking and vehicle storage in Rogers, AR. RV, boat, commercial fleet, and trailer storage with 24/7 gated access.",
-  url: "https://primeparkingnwa.com",
+  url: "https://www.primeparkingnwa.com",
   logo: {
     src: "/images/Prime_transparent_logo.webp",
     alt: "Prime Parking NWA",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Prime Parking NWA",
+  title: "Terms of Service",
   description: "Terms of service for Prime Parking NWA vehicle storage facility in Rogers, AR.",
 };
 

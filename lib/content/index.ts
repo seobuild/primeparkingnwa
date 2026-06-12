@@ -3,6 +3,7 @@ import { homePage } from "./pages/home";
 import { locationPage } from "./pages/location";
 import { faqsPage } from "./pages/faqs";
 import { tenantLoginPage } from "./pages/tenant-login";
+import { legacyPage } from "./pages/legacy";
 import { rvBoatStorageService } from "./services/rv-boat-storage";
 import { rvStorageService } from "./services/rv-storage";
 import { boatStorageService } from "./services/boat-storage";
@@ -21,6 +22,7 @@ export const allPages: Record<string, PageContent> = {
   [locationPage.slug]: locationPage,
   [faqsPage.slug]: faqsPage,
   [tenantLoginPage.slug]: tenantLoginPage,
+  [legacyPage.slug]: legacyPage,
 };
 
 export const allServices: Record<string, ServiceContent> = {

@@ -26,7 +26,7 @@ export default function ContentSection({ section }: Props) {
         {/* Header + Logo row */}
         <div className={`${hasRightImage ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-8" : ""}`}>
           {(section.preTitle || section.title) && (
-            <h1
+            <h2
               className={`text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] leading-tight ${
                 isLeft || hasRightImage ? "text-left" : "text-center"
               } ${
@@ -40,7 +40,7 @@ export default function ContentSection({ section }: Props) {
                 </>
               )}
               {section.title}
-            </h1>
+            </h2>
           )}
 
           {hasRightImage && (

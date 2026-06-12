@@ -15,7 +15,7 @@ export const homePage: PageContent = {
       },
       backgroundVideo: "/Prime%20Parking%20NWA%20Book%20Your%20Space%20Today.mp4",
       backgroundOverlay: 0.45,
-      title: "Paved Parking &\nVehicle Storage in NWA",
+      title: "Boat & RV Storage\nin Rogers, AR",
       description:
         "Prime Parking NWA (formerly The Drop Yard NWA) now offers fully paved parking, giving you a cleaner, safer, and more accessible place to store your vehicles.",
       buttons: [
@@ -140,7 +140,7 @@ export const homePage: PageContent = {
       testimonials: [
         {
           quote:
-            "Nice secure place! Manager Denise is very helpful!",
+            "Nice secure place! They are very helpful!",
           author: "Annette S.",
         },
         {
@@ -160,7 +160,7 @@ export const homePage: PageContent = {
         },
         {
           quote:
-            "Prime Parking is amazing, the security is top of the line. Denise is wonderful. She goes beyond the call to take care of your parking needs. We have no concerns for the well being of our boat. Thank you Denise for all your hard work.",
+            "Prime Parking is amazing, the security is top of the line. They are wonderful. They go beyond the call to take care of your parking needs. We have no concerns for the well being of our boat. Thank you for all your hard work.",
           author: "Melissa H.",
         },
         {

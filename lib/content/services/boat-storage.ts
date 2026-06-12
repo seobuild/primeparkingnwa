@@ -16,7 +16,7 @@ export const boatStorageService: ServiceContent = {
       },
       backgroundOverlay: 0.3,
       badge: "Safe. Secure. Convenient.",
-      title: "Boat Storage in\nNorthwest Arkansas",
+      title: "Boat Storage in\nRogers, AR",
       description:
         "Keep your boat, jet ski, or watercraft safe and ready for the next trip to Beaver Lake. Prime Parking NWA offers secure, paved boat storage just minutes from the water.",
       align: "left",

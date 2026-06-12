@@ -5,20 +5,20 @@ import InfoBarSection from "@/lib/components/sections/InfoBarSection";
 import { renderMarkdown } from "@/lib/utils/markdown";
 
 export const metadata: Metadata = {
-  title: `${tenantLoginPage.title} | Prime Parking NWA`,
+  title: tenantLoginPage.title,
   description: tenantLoginPage.description,
   alternates: {
     canonical: tenantLoginPage.canonical,
   },
   openGraph: {
-    title: `${tenantLoginPage.title} | Prime Parking NWA`,
+    title: tenantLoginPage.title,
     description: tenantLoginPage.description,
     url: tenantLoginPage.canonical,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${tenantLoginPage.title} | Prime Parking NWA`,
+    title: tenantLoginPage.title,
     description: tenantLoginPage.description,
   },
 };

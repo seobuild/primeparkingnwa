@@ -16,20 +16,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const location = allLocations[slug];
   if (!location) return {};
   return {
-    title: `${location.title} | Prime Parking NWA`,
+    title: location.title,
     description: location.description,
     alternates: {
       canonical: location.canonical,
     },
     openGraph: {
-      title: `${location.title} | Prime Parking NWA`,
+      title: location.title,
       description: location.description,
       url: location.canonical,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${location.title} | Prime Parking NWA`,
+      title: location.title,
       description: location.description,
     },
   };

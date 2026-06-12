@@ -169,16 +169,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const ogImage = post.featuredImage
     ? [{ url: post.featuredImage }]
-    : [{ url: "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/0c9d9b89-6b89-44cd-9832-e00e922fff63/test+web.jpg" }];
+    : [{ url: "https://lcpndbwqgdvduwneeplr.supabase.co/storage/v1/object/public/prime-parking-media/aerial2.webp" }];
 
   return {
-    title: `${post.metaTitle || post.title} | ${siteConfig.name} Blog`,
+    title: `${post.metaTitle || post.title} | Blog`,
     description: post.metaDescription || post.excerpt || siteConfig.description,
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
     openGraph: {
-      title: `${post.metaTitle || post.title} | ${siteConfig.name} Blog`,
+      title: `${post.metaTitle || post.title} | Blog`,
       description: post.metaDescription || post.excerpt || siteConfig.description,
       url: `/blog/${post.slug}`,
       type: "article",
@@ -186,7 +186,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.metaTitle || post.title} | ${siteConfig.name} Blog`,
+      title: `${post.metaTitle || post.title} | Blog`,
       description: post.metaDescription || post.excerpt || siteConfig.description,
       images: ogImage.map((img) => img.url),
     },

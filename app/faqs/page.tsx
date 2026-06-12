@@ -3,23 +3,35 @@ import { faqsPage } from "@/lib/content/pages/faqs";
 import HeroSection from "@/lib/components/sections/HeroSection";
 import InfoBarSection from "@/lib/components/sections/InfoBarSection";
 import FAQSection from "@/lib/components/sections/FAQSection";
+import FAQPageSchema from "@/app/components/FAQPageSchema";
+
+const OG_BASE = "https://lcpndbwqgdvduwneeplr.supabase.co/storage/v1/object/public/prime-parking-media";
 
 export const metadata: Metadata = {
-  title: `${faqsPage.title} | Prime Parking NWA`,
+  title: faqsPage.title,
   description: faqsPage.description,
   alternates: {
     canonical: faqsPage.canonical,
   },
   openGraph: {
-    title: `${faqsPage.title} | Prime Parking NWA`,
+    title: faqsPage.title,
     description: faqsPage.description,
     url: faqsPage.canonical,
     type: "website",
+    images: [
+      {
+        url: `${OG_BASE}/aerial2.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Prime Parking NWA FAQs - Vehicle storage questions answered",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${faqsPage.title} | Prime Parking NWA`,
+    title: faqsPage.title,
     description: faqsPage.description,
+    images: [`${OG_BASE}/aerial2.webp`],
   },
 };
 
@@ -38,8 +50,17 @@ export default function FAQsPage() {
   const heroSection = faqsPage.sections[0];
   const infoBarSection = faqsPage.sections[1];
 
+  const allFaqItems = faqSections.flatMap((section) =>
+    section.items.map((item) => ({
+      question: item.question,
+      answer: typeof item.answer === "string" ? item.answer : "",
+    }))
+  );
+
   return (
     <div>
+      <FAQPageSchema items={allFaqItems} />
+
       {/* Hero: full width */}
       {heroSection.type === "hero" && <HeroSection section={heroSection} />}
 

@@ -37,18 +37,6 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${siteConfig.name}`,
     },
     description: siteConfig.description,
-    keywords: [
-      "parking NWA",
-      "vehicle storage Rogers AR",
-      "RV storage Northwest Arkansas",
-      "boat storage Rogers",
-      "commercial fleet parking",
-      "trailer storage Arkansas",
-      "paved parking lot",
-      "24/7 gated storage",
-      "Prime Parking NWA",
-      "The Drop Yard NWA",
-    ],
     metadataBase: new URL(siteConfig.url),
     applicationName: siteConfig.name,
     appleWebApp: {
@@ -65,10 +53,10 @@ export async function generateMetadata(): Promise<Metadata> {
       url: siteConfig.url,
       images: [
         {
-          url: "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/0c9d9b89-6b89-44cd-9832-e00e922fff63/test+web.jpg",
+          url: "https://lcpndbwqgdvduwneeplr.supabase.co/storage/v1/object/public/prime-parking-media/aerial2.webp",
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} - Secure paved vehicle storage facility`,
+          alt: `${siteConfig.name} - Secure paved vehicle storage facility in Rogers, AR`,
         },
       ],
     },
@@ -78,7 +66,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: `${siteConfig.name} | ${siteConfig.tagline}`,
       description: siteConfig.description,
       images: [
-        "https://images.squarespace-cdn.com/content/v1/68d2a14ce7ee1775a30339c3/0c9d9b89-6b89-44cd-9832-e00e922fff63/test+web.jpg",
+        "https://lcpndbwqgdvduwneeplr.supabase.co/storage/v1/object/public/prime-parking-media/aerial2.webp",
       ],
     },
     robots: {
