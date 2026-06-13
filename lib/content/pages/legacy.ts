@@ -37,76 +37,34 @@ export const legacyPage: PageContent = {
       type: "content",
       preTitle: "What Changed?",
       title: "New Name. Same Great Storage.",
-      body: `**The Drop Yard NWA** has officially become **Prime Parking NWA**.
-
-We are the same locally owned and operated vehicle storage facility at **2808 N 26th St., Rogers, AR 72756** — with the same secure, fully paved lot, the same 24/7 gated access, and the same commitment to keeping your vehicles safe.
-
-### Why the Name Change?
-
-We rebranded to better reflect what we offer: **prime parking and storage** for RVs, boats, semi-trucks, trailers, commercial fleets, and construction equipment right here in Rogers, AR and the Northwest Arkansas region.
-
-### What Has Not Changed
-
-- **Same address:** 2808 N 26th St., Rogers, AR 72756
-- **Same phone:** (479) 640-7396
-- **Same paved, gated facility with 24/7 access**
-- **Same month-to-month rentals with no long-term contracts**
-- **Same online tenant portal** for payments and account management
-
-If you had a space at The Drop Yard, your account, gate code, and rental agreement are still active under Prime Parking NWA. Log in at the tenant portal or call us with any questions.
-
-### Looking For Drop Yard Rogers AR?
-
-You found us. Whether you searched for **Drop Yard Rogers AR**, **The Drop Yard NWA**, **Prime Drop Yard**, or **Drop Yard near me**, this is the same facility you know and trust — now operating as Prime Parking NWA.
-
-**Ready to store your vehicle?** [Rent a space online](https://rent.primeparkingnwa.com/sites/prime-parking-nwa) or give us a call.
-`,
+      body: "The Drop Yard NWA has officially become Prime Parking NWA. We are the same locally owned and operated vehicle storage facility at 2808 N 26th St., Rogers, AR 72756 — with the same secure, fully paved lot, the same 24/7 gated access, and the same commitment to keeping your vehicles safe.",
       align: "left",
       maxWidth: "lg",
       theme: "dark",
     },
     {
-      type: "feature-grid",
-      title: "Storage Options at Prime Parking NWA",
-      columns: 3,
-      features: [
-        {
-          icon: "truck",
-          title: "Semi Truck Parking",
-          description:
-            "Secure paved parking for semi-trucks, box trucks, and commercial vehicles with 24/7 gated access.",
-        },
-        {
-          icon: "ship",
-          title: "Boat Storage",
-          description:
-            "Safe boat and jet ski storage just minutes from Beaver Lake. Paved lot, easy trailer maneuvering.",
-        },
-        {
-          icon: "caravan",
-          title: "RV & Camper Storage",
-          description:
-            "Spacious paved spots for RVs, motorhomes, and campers of all sizes with round-the-clock access.",
-        },
-        {
-          icon: "trailer",
-          title: "Trailer Storage",
-          description:
-            "Flat, paved storage for utility trailers, enclosed trailers, and flatbeds.",
-        },
-        {
-          icon: "building",
-          title: "Commercial Fleet Parking",
-          description:
-            "Fleet parking solutions for businesses with multiple work trucks and service vehicles.",
-        },
-        {
-          icon: "hard-hat",
-          title: "Construction Equipment Storage",
-          description:
-            "Secure storage for bulldozers, excavators, skid steers, and work vehicles.",
-        },
-      ],
+      type: "content",
+      title: "Why the Name Change?",
+      body: "We rebranded to better reflect what we offer: prime parking and storage for RVs, boats, semi-trucks, trailers, commercial fleets, and construction equipment right here in Rogers, AR and the Northwest Arkansas region.",
+      align: "left",
+      maxWidth: "lg",
+      theme: "dark",
+    },
+    {
+      type: "content",
+      title: "What Has Not Changed",
+      body: "Same address: 2808 N 26th St., Rogers, AR 72756. Same phone: (479) 640-7396. Same paved, gated facility with 24/7 access. Same month-to-month rentals with no long-term contracts. Same online tenant portal for payments and account management. If you had a space at The Drop Yard, your account, gate code, and rental agreement are still active under Prime Parking NWA. Log in at the tenant portal or call us with any questions.",
+      align: "left",
+      maxWidth: "lg",
+      theme: "dark",
+    },
+    {
+      type: "content",
+      title: "Looking For Drop Yard Rogers AR?",
+      body: "You found us. Whether you searched for Drop Yard Rogers AR, The Drop Yard NWA, Prime Drop Yard, or Drop Yard near me, this is the same facility you know and trust — now operating as Prime Parking NWA. Ready to store your vehicle? Rent a space online or give us a call.",
+      align: "left",
+      maxWidth: "lg",
+      theme: "dark",
     },
     {
       type: "cta",
